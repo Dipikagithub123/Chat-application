@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Contacts</h2>
+        <button id="logoutBtn">Logout</button>
+      </div>
+      <form id="addContactForm" class="add-contact-form">
+        <input type="email" id="addContactEmail" placeholder="Add contact by email" required />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="contactsList"></ul>
+    </aside>
+    <main class="chat-main">
+      <header class="chat-header">
+        <h2 id="chatWith">Chat</h2>
+        <div class="chat-actions">
+          <button id="voiceCallBtn" title="Voice Call">🔊</button>
+          <button id="videoCallBtn" title="Video Call">🎥</button>
+          <button id="archiveBtn" title="Archive Chat">🗄️</button>
+        </div>
+      </header>
+      <section id="messages" class="chat-messages"></section>
+      <form id="messageForm" class="chat-form">
+        <input type="text" id="messageInput" placeholder="Type a message..." autocomplete="off" required />
+        <button type="submit">Send</button>
+        <button type="button" id="undoBtn" title="Undo">↩️</button>
+        <button type="button" id="deleteBtn" title="Delete">🗑️</button>
+      </form>
+    </main>
+  </div>
+  <div id="callModal" class="call-modal" style="display:none;">
+    <div class="call-modal-content">
+      <span id="callStatus">Incoming call...</span>
+      <button id="acceptCallBtn">Accept</button>
+      <button id="declineCallBtn">Decline</button>
+    </div>
+  </div>
+  <div class="video-container" style="display:none;">
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+    <button id="endCallBtn" class="end-call-btn">End Call</button>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
