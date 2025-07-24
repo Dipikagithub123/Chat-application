@@ -96,8 +96,6 @@ chat-application/
 - **Moment.js:** Date formatting.
 - **HTML/CSS/JavaScript:** Frontend UI.
 
-## License
-This project is for educational purposes. Feel free to use and modify it as needed.
 
 ## Acknowledgements
 - [Socket.io Documentation](https://socket.io/docs/)
